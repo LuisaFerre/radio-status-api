@@ -1,0 +1,44 @@
+name: Test de emisoras
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-radios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Verificar instalación
+        run: ffmpeg -version
+
+      - name: Descargar stations-data.js
+        run: |
+          curl -fsSL -o stations-data.js \
+            "https://codeberg.org/Izarren-Sua/voces-resonantes-radio-apps/raw/branch/main/frontend/dev/js/stations-data.js"
+          echo "Estaciones descargadas: $(grep -c 'stream:' stations-data.js)"
+      
+      - name: Ejecutar test de streams
+        run: |
+          chmod +x test-status-ci.sh
+          ./test-status-ci.sh
+
+      - name: Guardar resultados
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radio-status.json
+          git diff --cached --quiet && echo "Sin cambios" && exit 0
+          git pull
+          git commit -m "chore: actualizar estado de radios"
+          git push
