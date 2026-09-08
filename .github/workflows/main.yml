@@ -25,7 +25,7 @@ jobs:
       - name: Descargar stations-data.js
         run: |
           curl -fsSL -o stations-data.js \
-            "https://codeberg.org/Izarren-Sua/voces-resonantes-radio-apps/raw/branch/main/frontend/dev/js/stations-data.js"
+            "https://codeberg.org/Izarren-Sua/voces-resonantes-radio/raw/branch/main/frontend/dev/js/stations-data.js"
           echo "Estaciones descargadas: $(grep -c 'stream:' stations-data.js)"
       
       - name: Ejecutar test de streams
