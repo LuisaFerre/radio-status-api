@@ -1,10 +1,11 @@
 {
+  "0000000000": "down",
   "1DEMAYSACL": "ok",
   "90XXXXGAES": "ok",
   "97IRRABIES": "ok",
   "ACHALACOAR": "ok",
   "ACONCHENBR": "ok",
-  "AGORASMAES": "ok",
+  "AGORASMAES": "down",
   "AHIJUNQUAR": "http",
   "AIRELIROAR": "ok",
   "ALMAINGRES": "ok",
@@ -24,7 +25,7 @@
   "CIGUENMAES": "ok",
   "CONTRACAES": "http",
   "CRUDAXPECO": "down",
-  "CUACFMA ES": "ok",
+  "CUACFMACES": "ok",
   "CULTURQUEC": "ok",
   "CULTURBOCR": "down",
   "CULTURBUCR": "http",
@@ -114,7 +115,7 @@
   "RADIOPATGR": "ok",
   "RADIXUONES": "ok",
   "REBELDCUCU": "ok",
-  "REBELDBUAR": "down",
+  "REBELDBUAR": "ok",
   "RSKXXXATGR": "down",
   "SUBAALBOCO": "ok",
   "SUDACATRAR": "ok",
@@ -133,5 +134,5 @@
   "VOKARIBACO": "ok",
   "XATAXXPIES": "ok",
   "ZINTZIDOES": "ok",
-  "ZUMBALCOAR": "down"
+  "ZUMBALCOAR": "ok"
 }
